@@ -19,6 +19,7 @@
 <body>
     <h1>Modify</h1>
     <br>
+    <h3>posicion a modificar</h3>
     <select name="modificar"><br>
             <option value="posicion">0</option>
             <option value="posicion">1</option>
