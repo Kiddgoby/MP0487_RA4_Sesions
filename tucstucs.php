@@ -37,11 +37,15 @@
                 'price' => $_POST['price']
             ];
             $message = "Item added successfully!";
+
+
         } elseif (isset($_POST['edit'])) {
             $name = $_POST['name'];
             $quantity = $_POST['quantity'];
             $price = $_POST['price'];
             $index = $_POST['index'];
+
+            
         } elseif (isset($_POST['update']) && $_POST['index'] !== "") {
             $_SESSION['list'][$_POST['index']] = [
                 'name' => $_POST['name'],
@@ -49,17 +53,25 @@
                 'price' => $_POST['price']
             ];
             $message = "Item updated successfully!";
+        
+        
         } elseif (isset($_POST['delete']) && $_POST['index'] !== "") {
             unset($_SESSION['list'][$_POST['index']]);
             $_SESSION['list'] = array_values($_SESSION['list']);
             $message = "Item deleted successfully!";
+        
+        
         } elseif (isset($_POST['reset'])) {
             $_SESSION['list'] = [];
             $message = "List reset successfully!";
+        
+        
         } elseif (isset($_POST['total'])) {
             foreach ($_SESSION['list'] as $item) {
                 $totalValue += $item['quantity'] * $item['price'];
             }
+        
+        
         } else {
             $error = "Please fill in all fields!";
         }

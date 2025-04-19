@@ -9,6 +9,10 @@ if (!isset($_SESSION['refresco'])) {
 
 $error = "";
 
+if (isset($_POST['work_name'])) {
+    $_SESSION['work_name'] = $_POST['work_name'];
+}
+
 if (!empty($_POST)) {
     $producto = $_POST['producto'];
     $cantidad = $_POST['cantidad'];
